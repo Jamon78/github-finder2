@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 class Search extends Component {
   state = {
-    text: ''
+    text: '',
+    showClear: true
   };
 
   static propTypes = {
     searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired
+    clearUsers: PropTypes.func.isRequired
   };
 
   onSubmit = e => {
@@ -38,7 +38,6 @@ class Search extends Component {
             className='btn btn-dark btn-block'
           />
         </form>
-
         {showClear && (
           <button className='btn btn-light btn-block' onClick={clearUsers}>
             Clear
